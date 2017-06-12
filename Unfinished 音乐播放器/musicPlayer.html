@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>musicPlayer@impacN</title>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<style type="text/css">
+.example{
+	width:400px;
+	border:1px solid black;
+	}
+	
+.player{
+		height:162px;
+		width:326px;
+		position:relative;
+		z-index:2;
+	}
+.title .artist{
+	font-family:"方正清刻本悦宋简体";
+	left: 167px;
+    position: absolute;
+
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+	}
+.title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    top: 23px;
+}
+.artist {
+    color: #EEEEEE;
+    font-size: 12px;
+    top: 40px;
+}	
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="example">
+<div class="player">
+<div class="pl"></div>
+<div class="title"></div>
+<div class="artist"></div>
+<div class="covers">
+<div class="controls"></div>
+	<div class="play">▶</div>
+	<div class="pause">||</div>
+	<div class="rew">◁◁</div>
+    <div class="fwd">▷▷</div>
+</div>
+<div class="volume"></div>
+<div class="tracker"></div>
+</div>
+<ul class="playlist hidden">
+<li audiourl="1.mp3" cover="1.jpg" artist="Eminem">Mockingbird - Eminem</li>
+<li audiourl="2.mp3" cover="2.jpg" artist="Eminem">Ngẫu Hứng - Hoaprox</li>
+<li audiourl="3.mp3" cover="3.jpg" artist="Eminem">キセキ - GReeeeN (グリーン)</li>
+</ul>
+</div>
+
+
+
+</body>
+</html>
