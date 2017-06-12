@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>formcheck@impacN</title>
+<style type="text/css">
+
+#divv{
+	width:500px;
+	height:452px;
+	border:1px solid black;
+	margin-left:50%;
+	left:-250px;
+	position:absolute;
+	}
+
+#top{
+	width:500px;
+	height:120px;
+	background:url(c72dcfdagw1f8ws0gaklzj20u00u0n09.jpg);
+	border-bottom:1px solid black;
+	}
+
+#fform{
+	position:absolute;
+	float:left;
+	width:500px;
+	height:300px;
+	}
+dl{
+	position:relative;
+	left:60px;
+	width:400px;
+	float:left;
+	}
+	
+dl dd{
+	width:200px;
+	display:inline;
+	}
+	
+dl dd span{
+	font-size:17px;
+	}
+dl dd input{
+	position:relative;
+	float:right;
+	right:120px;
+	}
+#m{
+	position:relative;
+	float:right;
+	right:263px;
+	}
+#w{
+	position:relative;
+	float:right;
+	right:210px;
+	}
+	
+#btn{
+	position:relative;
+	float:left;
+	left:170px;
+	}
+</style>
+
+<script type="text/javascript">
+
+function submitt(){
+	// 1.检查用户名是否为空
+	var username=document.forms[0].username.value;
+	if(username==null||username==""){
+		alert("用户名不能为空！");
+		}
+		
+	// 2.检查密码是否为空，是否少于6位
+	var password=document.forms[0].password.value;
+	//1.
+	if(password==null||password==""){
+		alert("密码不能为空！");
+		}else{
+			if(password.length<6){
+		alert("密码不能少于6位数字！");
+		}
+			}
+	
+	// 3.检查年龄是否为空，必须为1-99的数字
+	var age=document.forms[0].age.value;
+	//1.
+	if(age==null||age==""){
+		alert("年龄不能为空！");
+	}else{
+		if(age>=1&&age<=99){
+			}else{
+				alert("年龄必须为1-99的数字！");
+				}
+		}
+		
+	// 4.检查电邮地址
+	var email=document.forms[0].email.value;
+	var bool=email.indexOf('@');
+	var bool2=email.indexOf(".com");
+	if(bool<0||bool2<0){
+		alert("你输入的不是标准电邮地址！");
+		}
+		
+	// 5.检查性别是否为空
+	var sex=document.getElementsByName("sex");
+	var op;
+	for(var i=0;i<sex.length;i++)
+	{
+		if(sex[i].checked)
+		{
+			op=sex[i].value;
+			break;
+		}
+	}
+	if(op==""||op==null){
+			alert("性别不能为空！");
+			}
+	}
+
+</script>
+</head>
+
+<body>
+<form method="get" name="regForm" action="">
+<div id="divv">
+<div id="top">
+</div>
+<div id="fform">
+<dl>
+<dd><span>会员名：</span></dd>
+<dd><input type="text" name="username"/></dd>
+</dl>
+
+<dl>
+<dd><span>性别：</span></dd>
+<dd>
+
+<label><input name="sex" type="radio" value="男" id="m" />男</label> 
+<label><input name="sex" type="radio" value="女" id="w"/>&nbsp;&nbsp;&nbsp;女</label> 
+</dd>
+</dl>
+
+<dl>
+<dd><span>密码：</span></dd>
+<dd>
+<input type="password" name="password" />
+</dd>
+</dl>
+
+<dl>
+<dd><span>电子邮箱：</span></dd>
+<dd>
+<input type="text" name="email"/>
+</dd>
+</dl>
+
+
+
+<dl>
+<dd><span>年龄：</span></dd>
+<dd>
+<input type="text" name="age"/>
+</dd>
+</dl>
+
+<dl>
+<dd>
+<input  id="btn" type="button" value="注册" name="submit" onclick="submitt();" />
+</dd>
+</dl>
+
+</div>
+</form>
+
+</body>
+</html>

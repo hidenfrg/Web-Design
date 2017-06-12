@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>menu@impacN</title>
+<style type="text/css">
+*{
+	font-size:22px;
+	}
+dl{
+	float:left;
+	}
+	
+dl dt{
+	background-color:#5DC4A9;
+	width:196px;
+	text-align:center;
+	border-right:1px solid white;
+	}
+	
+dl dt:hover{
+	background-color:#B35A78;
+	}
+
+dl dt span{
+	color:#FFFFFF;
+	position:relative;
+	}
+
+dl dd{
+	color:#FFFFFF
+	text-align:center;
+	border-right:1px solid white;
+	background-color:#00719A;
+	margin:0px;
+	width:80px;
+	display:inline;
+	cursor:pointer;
+	display:none;
+	}
+	
+dl dd a{
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	}
+	
+dl dd:hover{
+	background-color:#B35A78;
+	}
+
+#menu{
+	width:850px;
+	height:300px;
+	position:absolute;
+	margin-left:50%;
+	left:-425px;    
+	}
+
+
+</style>
+
+<script type="text/javascript">
+
+//显示菜单
+function show(obj){
+	setVisable(obj,true);
+	}
+//隐藏菜单
+function hide(obj){
+	setVisable(obj,false);
+	}
+//设置
+function setVisable(obj,flag){
+	var childs=obj.childNodes;
+	for(var i=0;i<childs.length;i++){
+		if(childs[i].nodeType==1&&childs[i].nodeName=="DD"){
+			if(flag){
+				childs[i].style.display="inline";
+				}else{
+					childs[i].style.display="none";
+					}
+			}
+		}
+	}
+	
+function handleLoad(){
+	var dlList=document.getElementsByTagName("dl");
+	for(var i=0;i<dlList.length;i++){
+		dlList[i].onmouseover=function()
+		{
+			show(this);
+			}
+			
+		dlList[i].onmouseout=function()
+		{
+			hide(this);
+			}
+			
+		}
+	}
+	
+</script>
+
+</head>
+
+<body onLoad="handleLoad();">
+
+<div id="menu">
+<dl>
+<dt><span>QAQ</span></dt>
+<dd><a href="#">QQQ</a></dd>
+<dd><a href="#">AAA</a></dd>
+<dd><a href="#">QQQ</a></dd>
+</dl>
+
+<dl>
+<dt><span>TnT</span></dt>
+<dd><a href="#">TTT</a></dd>
+<dd><a href="#">nnn</a></dd>
+<dd><a href="#">TTT</a></dd>
+</dl>
+
+<dl>
+<dt><span>OuO</span></dt>
+<dd><a href="#">OOO</a></dd>
+<dd><a href="#">uuu</a></dd>
+<dd><a href="#">OOO</a></dd>
+</dl>
+
+<dl>
+<dt><span>D3D</span></dt>
+<dd><a href="#">DDD</a></dd>
+<dd><a href="#">333</a></dd>
+<dd><a href="#">DDD</a></dd>
+</dl>
+
+</div>
+
+</body>
+</html>
