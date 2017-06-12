@@ -1,0 +1,12 @@
+/* CSS Document */
+
+body{
+  margin:0 auto;
+  padding:0;
+  box-sizing: border-box;
+  font: 18px Arial,sans-serif;
+  background-size:100%;
+  background-repeat:no-repeat;
+  background-position:top;
+}
+
