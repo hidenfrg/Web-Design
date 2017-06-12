@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Advertisement@impacN</title>  
+<style type="text/css">  
+#add{
+	width:300px;
+	height:300px;
+	background:url(u=4111814916,1741914925&fm=23&gp=0.jpg);
+	position:relative;
+	}
+</style>  
+
+<script type="text/javascript">  
+    var id;  
+    var directionX=true,directionY=true;  
+    var x=10,y=10;  
+    var obj = null;  
+      
+      
+    function init(){  
+        obj = document.getElementById("add");
+        obj.style.posLeft = x;
+        obj.style.posTop = y;  
+        id = setInterval(move,100);
+    }  
+      
+    function move(){  
+        var width=document.documentElement.clientWidth-obj.offsetWidth;  
+        var height= document.documentElement.clientHeight-obj.offsetHeight;  
+        if(x>=width ){ 
+            directionX = false;  
+        }  
+        if(x==0){  
+            directionX = true;  
+        }  
+        if(y >= height){  
+            directionY = false;  
+        }  
+        if(y==0){  
+            directionY = true;  
+        }  
+        if(directionX)   
+            x += 10;  
+        else   
+            x -= 10;  
+          
+        if(directionY)   
+            y += 10;  
+        else   
+            y -= 10;  
+        obj.style.posLeft = x;  
+        obj.style.posTop = y;  
+    }  
+  
+</script>  
+  
+</head>  
+<body onload="init()" >  
+  
+<div id="add">  
+      
+</div>  
+</body>  
+</html>  

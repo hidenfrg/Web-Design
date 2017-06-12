@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login@impacN</title>
+
+<style type="text/css">
+div{
+	margin:5px;
+	}
+#Login{
+	border-color:#FFFFFF;
+	width:500px;
+	height:370px;
+	border:1px solid #2888ED;
+	background-color:#000000;
+	position:absolute;
+	}
+	
+#top{
+	
+	height:128px;
+	}
+
+#top span{
+	font-size:20px;
+	color:#FFFFFF;
+	}
+	
+#middle{
+	position:absolute;
+	height:160px;
+	}
+	
+#left{
+	float:left;
+	height:160px;
+	width:300px;
+	}
+	
+#ll{
+	float:left;
+	}
+
+#ll ul{
+	width:60px;
+	}
+#ll ul li{
+	color:#FFFFFF;
+	height:30px;
+	list-style-type:none;
+	}
+	
+#lr{
+	
+	float:right;
+	width:180px;
+	}
+	
+#lr ul,#lr ul li,#lr ul li imput{
+	width:150px;
+	list-style-type:none;
+	}
+
+#right{
+	position:relative;
+	float:right;
+	height:70px;
+	width:100px;
+	left:20px;
+	}
+
+#right span{
+	position:absolute;
+	bottom:0;
+	}
+	
+#right span a{
+	color:#FFFFFF
+	}
+	
+#bottom{
+	position:absolute;
+	bottom:1px;
+	height:100px;
+	width:400px;
+	}
+
+#bottom input.lbtn{
+	position:absolute;
+	left:165px;
+	}
+#bottom input.rbtn{
+	position:absolute;
+	left:240px;
+	}
+	
+</style>
+
+<script type="text/javascript">
+
+window.onload=function(){
+	function setmid(){
+	var divv=document.getElementById("Login");
+	var x=divv.offsetWidth;
+	var y=divv.offsetHeight;
+	var lt=(document.documentElement.clientWidth-x)/2;
+	var top=(document.documentElement.clientHeight-y)/2;
+	divv.style.left=lt+'px';
+	divv.style.top=top+'px';
+	}
+	setmid();
+	window.onresize=function(){
+		setmid();
+		}
+}
+
+</script>
+
+</head>
+
+<body>
+</body>
+<div id="Login">
+
+<div id="top">
+<img src="profileIcon1123.jpg">
+<span id="title">用户登录</span>
+</div>
+<div id="middle">
+
+<div id="left">
+<div id="ll">
+<ul>
+<li>用户名</li>
+<li>密 码</li>
+</ul>
+</div>
+<div id="lr">
+<ul>
+<li><input type="text" name="username"></li>
+<li><input type="text" name="password"></li>
+</ul>
+</div>
+</div>
+
+<div id="right">
+<span><a href="#">忘记密码</a></span>
+</div>
+</div>
+
+<div id="bottom">
+<input type="button" value="登   录" class="lbtn">
+<input type="button" value="匿名登录" class="rbtn">
+</div>
+
+</div>
+</html>
