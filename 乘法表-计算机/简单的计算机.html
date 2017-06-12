@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Smiple Caculator@impacN</title>
+<style type="text/css">
+#caculator{
+	width:300px;
+	height:370px;
+	border:1px solid #639CD8;
+	background-color:#007771;
+	position:absolute;
+	left:50%;
+	margin-left:-150px;
+	}
+
+.title{
+	margin-top:10px;
+	height:20px;
+	}
+	
+.title .name{
+	position:absolute;
+	font-size:19px;
+	float:left;
+	left:10px;
+	}
+	
+.title .author{
+	position:absolute;
+	font-size:16px;
+	float:right;
+	right:10px;
+	}
+
+#display{
+	margin-top:10px;
+	}
+.screen{
+	width:265px;
+	height:25px;
+	text-align:right;
+	padding-left:10px;
+	font-size:20ox;
+	}
+#buttonarea{
+	margin:10px;
+	width:257px;
+	height:235px;
+	border:1px solid #FFFFFF;
+	padding:10px;
+	}
+#ba1,#ba2,#ba3,#ba4{
+	position:relative;
+	left:2px;
+	width:254px;
+	height:60px;
+	}
+#buttonarea .buttons{
+	height:54px;
+	width:47px;
+	text-align:center;
+	
+	}
+	
+.report{
+	position:absolute;
+	float:right;
+	right:10px;
+	}
+	
+.tip{
+	position:absolute;
+	float:left;
+	left:10px;
+	}
+</style>
+
+<script type="text/javascript">
+var num=0;
+
+function ccl(num){
+	if(num=="%"){
+		document.getElementById("screenarea").value=Math.round(document.getElementById("screenarea").value)/100;
+		}else{
+			document.getElementById("screenarea").value+=document.getElementById(num).value;
+			}
+	}
+function eva(){
+	document.getElementById("screenarea").value=eval(document.getElementById("screenarea").value);
+	}
+
+function clearnum(){
+	document.getElementById("screenarea").value=null;
+	document.getElementById("screenarea").focus();
+	}
+function backnum(){
+	var arr=document.getElementById("screenarea");
+	arr.value=arr.value.substring(0,arr.value.length-1);
+	}
+</script>
+
+
+
+</head>
+
+<body>
+
+<div id="caculator">
+<div class="title">
+<span class="name">简单的计算器</span>
+<span class="author">@impacN</span>
+</div>
+
+<div id="display">
+<div class="screen">
+<input type="text" id="screenarea" name="screenarea" class="screen">
+</div>
+</div>
+
+<div id="buttonarea">
+<div id="ba1">
+<input type="button" id="7" onClick="ccl(this.id)" value="7" class="buttons">
+<input type="button" id="8" onClick="ccl(this.id)" value="8" class="buttons">
+<input type="button" id="9" onClick="ccl(this.id)" value="9" class="buttons">
+<input type="button" id="back" onClick="backnum()" value="←" class="buttons">
+<input type="button" id="C" onClick="clearnum()" value="C" class="buttons">
+</div>
+<div id="ba2">
+<input type="button" id="4" onClick="ccl(this.id)" value="4" class="buttons">
+<input type="button" id="5" onClick="ccl(this.id)" value="5" class="buttons">
+<input type="button" id="6" onClick="ccl(this.id)" value="6" class="buttons">
+<input type="button" id="*" onClick="ccl(this.id)" value="*" class="buttons">
+<input type="button" id="/" onClick="ccl(this.id)" value="/" class="buttons">
+</div>
+
+<div id="ba3">
+<input type="button" id="1" onClick="ccl(this.id)" value="1" class="buttons">
+<input type="button" id="2" onClick="ccl(this.id)" value="2" class="buttons">
+<input type="button" id="3" onClick="ccl(this.id)" value="3" class="buttons">
+<input type="button" id="+" onClick="ccl(this.id)" value="+" class="buttons">
+<input type="button" id="-" onClick="ccl(this.id)" value="-" class="buttons">
+</div>
+<div id="ba4">
+<input type="button" id="0" onClick="ccl(this.id)" value="0" class="buttons">
+<input type="button" id="00" onClick="ccl(this.id)" value="00" class="buttons">
+<input type="button" id="." onClick="ccl(this.id)" value="." class="buttons">
+<input type="button" id="%" onClick="ccl(this.id)" value="%" class="buttons">
+<input type="button" id="eva" onClick="eva()" value="=" class="buttons">
+</div>
+
+
+
+
+
+</div>
+<div class="bottom">
+<span class="tip">欢迎使用Javascript计算机 :-D</span>
+<span class="report"><a href="#">反馈</a></span>
+</div>
+
+</div>
+
+</body>
+</html>
