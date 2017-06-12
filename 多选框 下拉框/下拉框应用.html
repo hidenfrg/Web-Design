@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Select@impacN</title>
+</head>
+
+<style type="text/css">
+
+.selectt{
+	width:120px;
+	float:left;
+	text-align:center;
+	margin:10px;
+	}
+
+</style>
+
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	//add
+	$("#add").click(function(){
+		var $options=$("#left option:selected");
+		$options.appendTo("#right");
+		});
+		
+	//remove
+	$("#remove").click(function(){
+		var $options=$("#right option:selected");
+		$options.appendTo("#left");
+		});
+		
+	//add all
+	$("#addall").click(function(){
+		$("#left option").each(function(){
+			$(this).appendTo("#right");
+			});
+		});
+		
+	//remove all
+	$("#removeall").click(function(){
+		$("#right option").each(function(){
+			$(this).appendTo("#left");
+			});
+		});
+	
+	
+	})
+
+
+</script>
+
+<body>
+<div class="selectt">
+<select style="height:160px; width:100px" multiple id="left">
+<option>选项1</option>
+<option>选项2</option>
+<option>选项3</option>
+<option>选项4</option>
+<option>选项5</option>
+<option>选项6</option>
+<option>选项7</option>
+<option>选项8</option>
+</select>
+<input type="button" value="选中添加到右边>>" id="add">
+<input type="button" value="全部添加到右边>>" id="addall">
+</div>
+
+<div class="selectt">
+<select style="height:160px; width:100px" multiple id="right"></select>
+
+<input type="button" value="<<选中添加到左边" id="remove">
+<input type="button" value="<<全部添加到左边" id="removeall">
+</div>
+</body>
+</html>

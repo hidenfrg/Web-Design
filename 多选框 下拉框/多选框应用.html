@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Checkbox@impacN</title>
+</head>
+
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+// 全选/全不选	
+$("#all").click(function(){
+	$("[name=items]:checkbox").attr("checked",this.checked);
+});
+$("[name=items]:checkbox").click(function(){
+	var flag=true;
+	$("[name=items]:checkbox").each(function(){
+		if(!this.checked){
+			flag=false;
+			}
+			});
+		$("#all").attr("checked",flag);
+})
+	
+//全选
+$("#selectall").click(function(){
+	$("[name=items]:checkbox").each(function() {
+        $(this).attr("checked",true);
+    });
+	});
+	
+//全不选
+$("#selectnone").click(function(){
+	$("[name=items]:checkbox").each(function() {
+        $(this).attr("checked",false);
+    });
+	});
+	
+//反选
+$("#selectoppo").click(function(){
+	$("[name=items]:checkbox").each(function() {
+		this.checked=!this.checked; 
+    });
+	});
+//提交
+$("#submitt").click(function(){
+	alert("提交成功！");
+	});
+	})
+
+</script>
+
+<body>
+
+<div id="main">
+你爱好的运动是？
+<input type="checkbox" id="all"> 全选/全不选
+<br />
+<input type="checkbox" id="foot" value="" name="items" />足球
+<input type="checkbox" id="basket" value="" name="items" />篮球
+<input type="checkbox" id="mon" value="" name="items" />羽毛球
+<input type="checkbox" id="ping" value="" name="items" />乒乓球
+<br />
+<input type="button" value="全 选" id="selectall"/>
+<input type="button" value="全不选" id="selectnone"/>
+<input type="button" value="反 选" id="selectoppo"/>
+<input type="button" value="提 交" id="submitt"/>
+</div>
+
+</body>
+</html>
